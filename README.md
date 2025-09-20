@@ -1,4 +1,3 @@
-Got it ✅ I’ll generate a **GitHub-formatted `README.md`** with badges for the tools mentioned in your installation guide. Here’s a clean and professional version:
 
 ````markdown
 # VLSI Tool Installation Guide 🚀
@@ -158,7 +157,4 @@ make test
 
 🔧 Happy Hacking with Open-Source VLSI Tools!
 
-```
 
-Would you like me to also **include a section with screenshots placeholders** (like `![yosys](docs/images/yosys.png)`) so you can later upload snapshots of installed tools?
-```
