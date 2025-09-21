@@ -1,0 +1,17 @@
+Yosys, Icarus Verilog, and GTKWave are three important open-source tools used in the digital design and verification flow.
+
+**Yosys** is a logic synthesis tool. It takes Verilog RTL (Register Transfer Level) code and converts it into a gate-level netlist. This means it translates your design into logic gates and flip-flops that can be implemented on FPGA or ASIC. Yosys can also optimize the design by removing redundant logic and supports technology mapping with tools like nextpnr.
+
+**Icarus Verilog (iverilog)** is a Verilog simulator. It is used to check the functional correctness of your design before synthesis. You can write a Verilog testbench, compile it along with your design using iverilog, and then run the simulation with vvp. If you add waveform dump commands in your testbench, iverilog will produce a VCD (Value Change Dump) file that stores all signal changes during simulation.
+
+**GTKWave** is a waveform viewer. It allows you to open the VCD file generated from Icarus Verilog and visualize signals as waveforms over time. This is very useful for debugging, as you can check whether your design behaves as expected, whether counters increment correctly, or if finite state machines reach the correct states.
+
+The typical workflow is:
+
+1. Write RTL in Verilog.
+2. Simulate with Icarus Verilog and generate a VCD file.
+3. Open the VCD file in GTKWave to check waveforms.
+4. Once the design is correct, use Yosys to synthesize it into a gate-level netlist.
+
+This flow ensures your design is both functionally correct and synthesizable, forming the basis for larger projects like RISC-V processors and tapeout programs.
+
