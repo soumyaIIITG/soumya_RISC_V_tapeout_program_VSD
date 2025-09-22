@@ -1,0 +1,15 @@
+Today I learned about **optimization for multiplication in Verilog**. Multiplication by constants can often be replaced with simpler shift and add operations, which use fewer hardware resources and improve performance.
+
+For example:
+
+* If we want `y[3:0] = a[2:0] * 2`, instead of using a multiplier, we can left shift `a` by 1 and append `0` at the end. This works because multiplying by 2 is equivalent to shifting left once.
+
+  * Example: `y = {a, 1'b0};`
+
+* If we want `y[5:0] = a[2:0] * 9`, we can rewrite it as `a * (8 + 1) = (a << 3) + a`.
+
+  * This means we use one shifted version of `a` (`a << 3`) and add it to another instance of `a`.
+  * This avoids using a costly multiplier and instead uses simple shift and add logic.
+
+Such optimizations are widely used in hardware design to reduce complexity, area, and power.
+
