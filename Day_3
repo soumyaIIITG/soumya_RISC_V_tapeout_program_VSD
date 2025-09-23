@@ -1,0 +1,25 @@
+Today I learned about different types of optimizations in Verilog synthesis:
+
+1. Constant Propagation
+
+   * If a signal is tied to a constant (`0` or `1`), the constant is propagated through the logic.
+   * Example: `y = a & 1’b0;` → `y` is always `0`, so the AND gate is removed.
+
+2. Unused Outputs / Dead Code Elimination
+
+   * Signals or outputs that are declared but never used are removed.
+   * Example: if a module produces `out2` but it’s never connected, synthesis drops the logic that generates `out2`.
+
+3. Boolean Simplification
+
+   * Logical expressions are minimized using Boolean algebra.
+   * Example: `y = (a & b) | (a & ~b);` → simplified to `y = a`.
+
+4. Strength Reduction (Shift-and-Add Optimization)
+
+   * Multiplication/division by powers of two is replaced by left or right shifts.
+   * Example: `y = a * 2;` → `y = a << 1;`.
+   * Multiplication by constants is decomposed into shifts and adds.
+   * Example: `y = a * 9;` → `(a << 3) + a`.
+
+
